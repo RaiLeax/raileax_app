@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>RaiLeax Проекты</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <header class="header">
+            <div class="header__row">
+                <div class="header__logo"><a>яндекс лицей ++</a></div>
+                <nav class="header__navigation">
+                        <ul>
+                            <li><a href="./index.html">Главная</a></li>
+                            <li><a href="./about.html">Обо мне</a></li>
+                        </ul>
+                </nav>
+                
+                <div class="theme-switch-wrapper">
+                    <a>тёмная тема</a>
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <span class="slider round"></span>
+                    </label></div>
+                <div class="burger-menu">
+                        <button type="button" class="burger-menu__btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--heroicons-solid burger-menu__icon" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 20 20" data-icon="heroicons-solid:menu-alt-3" style="color: white; font-size: 50px;"><path fill="currentColor" fill-rule="evenodd" d="M3 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm0 5a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm6 5a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2h-6a1 1 0 0 1-1-1Z" clip-rule="evenodd"></path></svg>
+                        </button>
+                        <div hidden="hidden" class="burger-menu__block">
+                            <nav class="burger-menu__nav">
+                                <ul>
+                                    <li><a href="./index.html">Главная</a></li>
+                                    <li><a href="./about.html">Обо мне</a></li>
+                                </ul>
+                            </nav>
+
+                            <div class="theme-switch-wrapper">
+                                <a>тёмная тема</a>
+                                <label class="theme-switch" for="checkbox">
+                                    <input type="checkbox" id="checkbox" />
+                                    <div class="slider round"></div>
+                                </label>
+                            </div>
+                    </div>
+                </div>
+                </div>
+            </div>               
+        </header>
+    </div>
+    <main>
+        <div class="container">
+            <div class="project__section">
+                <a href="./first_project.html"><img src="./assets/qrc.png" class="class project__button" alt=""></a>
+                <a href="./first_project.html" class="text__block">
+                    <h2>Дискорд-бот QRC</h2>
+                    <p>Банковская система в майнкрафте</p> 
+                </a>
+            </div>
+            <div class="project__section">
+                <a href="./second_project.html"><img src="./assets/libuist.png" class="class project__button" alt=""></a>
+                <a href="./second_project.html" class="text__block">
+                    <h2>Либуист</h2>
+                    <p>Проект на конференцию потенциал</p> 
+                </a>
+            </div>    
+        </div>
+    </main>
+</div>
+
+<script src="./javascript/change_theme.js"></script>
+<script src="./javascript/burger-menu.js"></script>
+</body>
+</html>

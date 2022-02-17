@@ -1,0 +1,765 @@
+:root {
+    --first-color: #46917a;
+    --second-color: #72BE8D;
+    --third-color: #60A179;
+    --fourth-color:#a7d3b2;
+    --font-color: white;
+    --shadow-color: black;
+    --bg: url("../assets/background.png");
+    --bg_mobile: url("../assets/mbackground.png");
+    --heading-color: #292922;
+    --switcha-bg: #3F6973;
+}
+[data-theme="dark"] {
+    --first-color: #3F6973;
+    --second-color: #4D818C;
+    --third-color: #4D818C;
+    --fourth-color:#1D3C40;
+    --font-color: #C5D3D9;
+    --shadow-color: white;
+    --bg: url("../assets/dark-background.png");
+    --bg_mobile: url("../assets/dark-mbackground.png");
+    --heading-color: #292922;
+    --switcha-bg: #72BE8D;
+}
+
+
+
+
+
+html{
+    height: 100%;
+}
+
+.wrapper {     
+    overflow: hidden;     max-width: 100%; 
+}
+
+body{
+    height: 100%;
+    font-family: "Rubik";
+    font-weight: 300;
+    font-size: 48px;
+    color: var(--font-color);
+    background-image: var(--bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (max-width:1920px){
+    body{
+        background-size: 150%;
+    }
+}
+@media (max-width:1366px){
+    body{
+        background-size: 500%;
+    }
+}
+@media (max-width:768px){
+    body{
+        background-image: var(--bg_mobile);
+    }
+}
+
+
+
+html{
+    box-sizing: border-box;
+}
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+
+.header{
+    padding-top: 35px;
+}
+@media (max-width:768px){
+    .header{
+        padding-top: 20px;
+    }
+}
+
+.header__row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+.header__logo{
+    font-family: "Rubik";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 48px;
+
+}
+@media (max-width:1920px){
+    .header__logo a{
+        font-size: 36px;}
+}
+
+
+
+
+.header__navigation{
+    color: var(--font-color);
+
+}
+@media (max-width:768px){
+    .header__navigation{
+        display: none;
+    }
+}
+
+
+.header__navigation ul{
+    display: flex;
+}
+
+.header__navigation li{
+    display: flex;
+    margin-right: 70px;
+}
+
+.header__navigation a{
+    text-decoration: none;
+    color: var(--font-color);
+    font-size: 48px;
+    font-family: "Rubik";
+}
+@media (max-width:1920px){
+    .header__navigation a{
+        font-size: 36px;}
+}
+.header a{
+    font-size:48px;
+}
+@media (max-width:1920px){
+    .header a{
+        font-size: 36px;}
+}
+
+
+.header__navigation li:last-child{
+    margin-right: 0px;
+}
+
+
+.header__navigation a{
+    transition: color 0.2s ease;
+}
+.header__navigation a:hover {
+    color: var(--first-color);
+}
+
+.header__navigation a:active {
+    transform: translateY(-2px);
+    color: var(--font-color);
+}
+
+/* Навигация под Бургер */
+
+@media (max-width:1366px) {
+    .header__row {
+    position: fixed;
+        width: 90%;
+    }
+}
+
+.burger-menu{
+    display: none;
+    align-self: center;
+    margin-top: 15px;
+}
+
+.burger-menu__btn {
+    background-color: transparent;
+    border: none;
+}
+
+.burger-menu__btn._disabled {
+    display: none;
+}
+
+.burger-menu._active .burger-menu__btn {
+    right: 1%;
+    top: 35px;
+}
+
+.burger-menu._active .burger-menu__block {
+    display: flex;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 45px;
+    text-align: center;
+    background-color: var(--fourth-color);
+}
+
+.burger-menu__nav a{
+    text-decoration: none;
+    color: var(--font-color);
+    font-family: "Rubik";
+    font-size: 32px;
+}
+
+.burger-menu__nav li:not(:first-child) {
+    margin-top: 10px;
+    color: #fff;
+}
+
+.burger-menu__block .theme-switch-wrapper {
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+@media (max-width:1366px) {
+    .header__navigation{
+        display: none;
+    }
+    .burger-menu {
+        display: inline-block;
+    }
+}
+
+
+
+
+
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  }
+@media (max-width:1366px){
+    .theme-switch-wrapper {
+    display: none;
+    align-items: center;
+      }
+}
+
+
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+    margin-left: 10px;
+    align-self: center;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: var(--switcha-bg);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--switcha-bg);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
+  
+
+
+  
+  
+  
+
+
+
+.container{
+    position: relative;
+    width: 1828px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:1920px){
+    .container{
+        width: 95.3%;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 2.35%;
+        margin-right: 2.35%;
+    }
+}
+
+.content {
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+@media (max-width:1366px){
+    .content{
+        flex-direction: column;
+    }
+}
+
+.about-me-info{
+    padding-top: 35px;
+    font-size: 36px;
+    font-family: "Rubik Mono One";
+    flex: 0 1 498px;
+}
+
+.discord{
+    color: var(--font-color);
+    font-size: 50px;
+}
+
+.vk{
+    color: var(--font-color);
+    font-size: 50px;
+}
+
+.github{
+    color: var(--font-color);
+    font-size: 50px;
+}
+
+
+
+@media (max-width:1920px){
+    .about-me-info{
+        padding-top: 35px;
+        font-size: 36px;
+        font-family: "Rubik Mono One";
+        flex: 0 1 26%;
+    }
+}
+
+
+.about-me-info img{
+    width: 442px;
+    height: 442px;
+    border: 6px solid var(--second-color);
+    filter: drop-shadow(0px 4px 4px var(--shadow-color));
+    border-radius: 20px;
+    margin: 17px 0;
+}
+@media (max-width:1366px) {
+    .about-me-info img {
+        width: 342px;
+        height: 342px;
+    }
+}
+
+
+
+.about-me-info h2{
+    font-size: 36px;
+}
+@media (max-width:1366px) {
+    .about-me-info h2{
+    font-size: 30px;
+}
+}
+
+.links-row{
+    padding-top: 25px;
+    display: inline-block
+}
+
+.discord{
+    color: var(--font-color);
+    font-size: 50px;
+    transition: color 0.2s ease;
+}
+
+.vk{
+    color: var(--font-color);
+    font-size: 50px;
+    transition: color 0.2s ease;
+}
+
+.github{
+    color:var(--font-color);
+    font-size: 50px;
+    transition: color 0.2s ease;
+}
+
+.discord :hover{
+    color: var(--first-color);
+    
+}
+
+.vk :hover{
+    color: var(--first-color);
+    
+}
+
+.github :hover{
+    color: var(--first-color);
+    
+}
+
+.abobus-me-info {
+    flex: 0 1 658px;
+    padding-top: 122px;
+}
+@media (max-width:1920px){
+    .abobus-me-info{
+        flex: 0 1 34%;
+        padding-top: 6.5%;
+    }
+}
+
+
+.abobus-me-info__item:not(:first-child) {
+    margin-top: 13px;
+}
+
+.abobus-me__subtitle {
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.abobus-me__text {
+    margin-top: 9px;
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.schila {
+    padding-top: 131px;
+}
+@media (max-width:1920px){
+    .schila {
+        padding-top: 16%;
+    }
+}
+
+@media (max-width:1366px){
+    .schila{
+        padding-top: 5%;
+        margin-bottom: 50px;
+    }
+}
+
+.schila__btn {
+    background-color: var(--third-color);
+    color: var(--font-color);
+    font-size: 36px;
+    font-weight: 400;
+    font-family: "Rubik Mono One";
+    line-height: 45px;
+    text-decoration: none;
+    padding: 16px 89px;
+    border-radius: 30px;
+    transition: color 0.4s ease;
+}
+
+
+.schila__btn:hover{
+    color: var(--fourth-color);
+    background-color: var(--first-color);
+}
+
+.schila__btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+.wlc{
+    padding-top: 360px  ;
+    align-items: center;
+    text-align: center;
+}
+
+.wlc h1{
+    color: var(--font-color);
+    font-size: 72px;
+    font-family: "Rubik Mono One";
+
+}
+@media (max-width:1920px){
+    .wlc h1{
+        font-size: 64px;}
+}
+@media (max-width:768px){
+    .wlc h1{
+        font-size: 48px;}
+}
+
+
+
+.wlc h2{
+    color: var(--font-color);
+    font-size: 72px;
+    font-family: "Rubik";
+    font-weight: 300;
+
+}
+@media (max-width:1920px){
+    .wlc h2{
+        font-size: 64px;}
+}
+@media (max-width:768px){
+    .wlc h2{
+        font-size: 48px;}
+}
+
+
+.project__section img{
+    width: 260px;
+    height: 260px;
+    background-color: var(--third-color);
+    border-radius: 45px;
+}
+@media (max-width:1366px) {
+    .project__section img{
+    width: 120px;
+    height: 120px;
+    background-color: var(--third-color);
+    border-radius: 45px;
+}
+}
+
+.project__section{
+    padding-top: 120px;
+    display: flex;
+    
+
+}
+
+.project__section h2{
+    font-family: "Rubik Mono One";
+    font-size: 48px;
+}
+.project__section a{
+    font-family: "Rubik Mono One";
+    font-size: 48px;
+    text-decoration: none;
+    color: var(--font-color);
+}
+@media (max-width:1366px) {
+    .project__section h2,
+    .project__section p {
+        font-family: "Rubik Mono One";
+        font-size: 36px;
+        color: var(--font-color);
+        text-decoration: none;
+    }
+}
+
+
+.text__block{
+    padding-left: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+@media (max-width:768px){
+    .text__block h2{
+        font-size: 36px;}
+    .text__block p{
+        font-size: 36px;}
+}
+
+
+
+.qrc__project img{
+    width: 692px;
+    height: 390px;
+    border-radius: 40px;
+}
+
+
+.qrc__project{
+    padding-top: 190px;
+    padding-left: 100px;
+    display: flex;
+}
+@media (max-width:1920px){
+    .qrc__project{
+        padding-top: 9.5%;
+        padding-left: 5.5%;
+        display: flex;
+    }
+}
+@media (max-width:1366px){
+    .qrc__project{
+        flex-direction: column;
+    }
+}
+@media (max-width:768px){
+    .qrc__project{
+        padding-top: 9.5%;
+        padding-left: 0%;
+    }
+}
+
+
+.about__qrc{
+    padding-left: 100px;
+    flex: 0 1 813px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+@media (max-width:1920px){
+    .about__qrc{
+        flex: 0 1 42%;
+    }
+}
+@media (max-width:768px){
+    .about__qrc{
+        flex: 0 1 42%;
+        padding-left: 5%;
+        padding-top: 4%;
+    }
+}
+
+
+.about__qrc p{
+    font-size: 48px;
+    padding-bottom: 35px;
+    
+}
+
+@media (max-width:1920px){
+    .about__qrc p{
+        font-size: 36px;
+    }
+}
+
+
+
+.qugalet__btn {
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 400;
+    font-family: "Rubik Mono One";
+    line-height: 45px;
+    text-decoration: none;
+    padding: 18px 120px;
+    border-radius: 30px;
+    transition: color 0.4s ease;
+    
+}
+@media (max-width:1920px){
+    .qugalet__btn{
+        font-size: 24px;
+        padding: 12px 80px;
+    }
+}
+@media (max-width:768px){
+    .qugalet__btn{
+        font-size: 24px;
+        padding: 12px 60px;
+        text-align:center}
+}
+
+.qugalet__btn:hover{
+    color: var(--fourth-color);
+    background-color: var(--first-color);
+}
+
+.qugalet__btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px var(--shadow-color);
+}
+
+
+
+
+
+/* rubik-300 - latin_cyrillic */
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/rubik-v18-latin_cyrillic-300.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/rubik-v18-latin_cyrillic-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/rubik-v18-latin_cyrillic-300.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-300.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-300.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/rubik-v18-latin_cyrillic-300.svg#Rubik') format('svg'); /* Legacy iOS */
+  }
+  
+  /* rubik-regular - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/rubik-v18-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/rubik-v18-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/rubik-v18-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/rubik-v18-latin_cyrillic-regular.svg#Rubik') format('svg'); /* Legacy iOS */
+  }
+  
+  /* rubik-900 - latin_cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/rubik-v18-latin_cyrillic-900.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/rubik-v18-latin_cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/rubik-v18-latin_cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-900.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/rubik-v18-latin_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/rubik-v18-latin_cyrillic-900.svg#Rubik') format('svg'); /* Legacy iOS */
+  }
+  
+  
+  
+  
+
+ /* rubik-mono-one-regular - latin_cyrillic */
+@font-face {
+    font-family: 'Rubik Mono One';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/rubik-mono-one-v12-latin_cyrillic-regular.svg#RubikMonoOne') format('svg'); /* Legacy iOS */
+  }
